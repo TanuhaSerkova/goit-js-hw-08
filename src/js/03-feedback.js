@@ -14,11 +14,10 @@ const onFormInput = () => {
 
 feedbackForm.addEventListener("input", throttle(onFormInput, 500));
 
-
 // Получение данных из локального хранилище при перезагрузке страницы
 const onPopulateForm = () => {
     if (localStorage.getItem(FORM_KEY)) {
-        Object.entries(JSON.parse(localStorage.getItem(FORM_KEY))).forEach(([name, value]) => feedbackForm.elements[name].value = value); // `${name}: ${value}`; `${name}: value`; `${name} = value`
+        Object.entries(JSON.parse(localStorage.getItem(FORM_KEY))).forEach(([name, value]) => feedbackForm.elements[name].value = value);
     }
 };
 
